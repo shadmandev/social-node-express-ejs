@@ -5,6 +5,7 @@ import session from "express-session";
 import ejslayouts from "express-ejs-layouts";
 import { mongoDBConnection } from "./config/db.js";
 import { localsMiddleware } from "./middlewares/localsMiddleware.js";
+import userRoute from "./routes/user.js";
 
 //environment variables
 dotenv.config();
@@ -36,16 +37,7 @@ app.set("layout", "layouts/app");
 app.use(ejslayouts);
 
 //routes
-app.get("/", (req, res) => {
-    console.log(req.session);
-    res.render("index");
-});
-
-app.get("/user", (req, res) => {
-    req.session.title = "My name is shadman";
-    req.session.content = "My name is shadman";
-    res.redirect("/");
-});
+app.use("/", userRoute);
 
 //listen
 app.listen(PORT, () => {

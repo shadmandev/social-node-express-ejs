@@ -1,0 +1,68 @@
+<div class="flex min-h-[400px] items-center">
+    <div class="w-[50%]">
+        <lottie-player
+            src="https://assets6.lottiefiles.com/packages/lf20_nc1bp7st.json"
+            background="transparent"
+            speed="1"
+            style="width: 300px; height: 300px"
+            loop
+            autoplay
+        ></lottie-player>
+    </div>
+    <div class="w-[50%]">
+        <h2 class="text-3xl font-bold text-center mb-5">Create Your Account</h2>
+        <% if (message && status) { %>
+        <p class="<%= status %>"><%= message %></p>
+        <% } %>
+        <form action="/register" method="POST" class="px-4">
+            <div
+                class="flex bg-gray-50 border border-gray-300 items-center rounded-lg p-2.5 mb-3"
+            >
+                <i class="fa-regular fa-user mr-2"></i>
+                <input
+                    type="text"
+                    id="name"
+                    class="text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full focus-visible:outline-none focus-visible:border-none"
+                    name="name"
+                    placeholder="Name"
+                />
+            </div>
+            <div
+                class="flex bg-gray-50 border border-gray-300 items-center rounded-lg p-2.5 mb-3"
+            >
+                <i class="fa-regular fa-envelope mr-2"></i>
+                <input
+                    type="email"
+                    id="email"
+                    class="text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full focus-visible:outline-none focus-visible:border-none"
+                    name="email"
+                    placeholder="Email"
+                />
+            </div>
+            <div
+                class="flex bg-gray-50 border border-gray-300 items-center rounded-lg p-2.5 mb-3"
+            >
+                <i class="fa-solid fa-key mr-2"></i>
+                <input
+                    type="password"
+                    id="password"
+                    class="text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full focus-visible:outline-none focus-visible:border-none"
+                    name="password"
+                    placeholder="Password"
+                />
+            </div>
+            <div>
+                <input
+                    type="submit"
+                    class="text-white w-full p-2.5 rounded-lg cursor-pointer bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300"
+                    value="Sign up"
+                />
+            </div>
+            <div>
+                <a href="/" class="text-center mt-6 block"
+                    >Already registered? Login</a
+                >
+            </div>
+        </form>
+    </div>
+</div>
