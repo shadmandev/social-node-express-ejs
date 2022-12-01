@@ -12,9 +12,27 @@
     <div class="w-[50%]">
         <h2 class="text-3xl font-bold text-center mb-5">User Login</h2>
         <% if (message && status) { %>
-        <p class="<%= status %>"><%= message %></p>
+        <div
+            class="flex p-4 mb-4 text-sm rounded-lg <%= status %>"
+            role="alert"
+        >
+            <svg
+                aria-hidden="true"
+                class="flex-shrink-0 inline w-5 h-5 mr-3"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                    clip-rule="evenodd"
+                ></path>
+            </svg>
+            <div><%= message %></div>
+        </div>
         <% } %>
-        <form action="./profile.html" class="px-4">
+        <form action="/" class="px-4" method="POST">
             <div
                 class="flex bg-gray-50 border border-gray-300 items-center rounded-lg p-2.5 mb-3"
             >
@@ -22,6 +40,7 @@
                 <input
                     type="email"
                     id="email"
+                    name="email"
                     class="text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full focus-visible:outline-none focus-visible:border-none"
                     placeholder="Email"
                     required
@@ -33,6 +52,7 @@
                 <i class="fa-solid fa-key mr-2"></i>
                 <input
                     type="password"
+                    name="password"
                     id="password"
                     class="text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full focus-visible:outline-none focus-visible:border-none"
                     placeholder="Password"

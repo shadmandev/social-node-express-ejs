@@ -3,6 +3,7 @@ import colors from "colors";
 import dotenv from "dotenv";
 import session from "express-session";
 import ejslayouts from "express-ejs-layouts";
+import cookieParser from "cookie-parser";
 import { mongoDBConnection } from "./config/db.js";
 import { localsMiddleware } from "./middlewares/localsMiddleware.js";
 import userRoute from "./routes/user.js";
@@ -13,6 +14,9 @@ const PORT = process.env.PORT || 9000;
 
 //express init
 const app = express();
+
+//cookieParser init
+app.use(cookieParser());
 
 //express middlewares
 app.use(express.json());
